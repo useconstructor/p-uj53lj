@@ -278,13 +278,38 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A0E2F 0%, #1A1F3A 100%)" }}>
-        {/* Background stars/particles effect */}
+      <section className="relative pt-32 pb-20 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A0E2F 0%, #0D1235 50%, #1A1F3A 100%)" }}>
+        {/* Atmospheric space/nebula background effect */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.6 }} />
-          <div className="absolute top-40 right-20 w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: "#F5F7FF", opacity: 0.4, animationDelay: "0.5s" }} />
-          <div className="absolute top-60 left-1/4 w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.5, animationDelay: "1s" }} />
-          <div className="absolute bottom-40 right-1/3 w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: "#F5F7FF", opacity: 0.3, animationDelay: "1.5s" }} />
+          {/* Nebula glow effects */}
+          <div
+            className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full blur-[120px]"
+            style={{ background: "radial-gradient(circle, rgba(123, 95, 255, 0.25) 0%, rgba(91, 63, 223, 0.1) 40%, transparent 70%)" }}
+          />
+          <div
+            className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full blur-[100px]"
+            style={{ background: "radial-gradient(circle, rgba(147, 112, 255, 0.2) 0%, rgba(123, 95, 255, 0.05) 50%, transparent 70%)" }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[80px]"
+            style={{ background: "radial-gradient(circle, rgba(91, 63, 223, 0.15) 0%, transparent 60%)" }}
+          />
+
+          {/* Stars */}
+          <div className="absolute top-16 left-[8%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.8 }} />
+          <div className="absolute top-24 left-[15%] w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.9 }} />
+          <div className="absolute top-32 right-[12%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.6 }} />
+          <div className="absolute top-40 right-[25%] w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.7, animationDelay: "0.3s" }} />
+          <div className="absolute top-48 left-[30%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.5 }} />
+          <div className="absolute top-56 left-[5%] w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#9370FF", opacity: 0.6, animationDelay: "0.6s" }} />
+          <div className="absolute top-64 right-[8%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.7 }} />
+          <div className="absolute top-72 right-[35%] w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.5, animationDelay: "0.9s" }} />
+          <div className="absolute top-80 left-[45%] w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.4 }} />
+          <div className="absolute top-96 left-[20%] w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: "#9370FF", opacity: 0.6, animationDelay: "1.2s" }} />
+          <div className="absolute bottom-48 right-[18%] w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.8, animationDelay: "0.5s" }} />
+          <div className="absolute bottom-32 left-[12%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.6 }} />
+          <div className="absolute bottom-24 right-[40%] w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.5, animationDelay: "1.5s" }} />
+          <div className="absolute bottom-16 left-[55%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.7 }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -369,34 +394,63 @@ export default function HomePage() {
             </div>
 
             {/* Right Content - Dashboard Preview */}
-            <div className="relative lg:pl-8">
-              <div 
-                className="relative rounded-2xl p-1 overflow-hidden"
-                style={{ 
-                  background: "linear-gradient(135deg, rgba(123, 95, 255, 0.5) 0%, rgba(123, 95, 255, 0.1) 100%)",
+            <div className="relative lg:pl-4">
+              {/* Glow effect behind the dashboard */}
+              <div
+                className="absolute inset-0 blur-3xl"
+                style={{ background: "radial-gradient(ellipse at center, rgba(123, 95, 255, 0.3) 0%, transparent 70%)" }}
+              />
+
+              <div
+                className="relative rounded-2xl p-[2px] overflow-hidden"
+                style={{
+                  background: "linear-gradient(135deg, rgba(123, 95, 255, 0.6) 0%, rgba(147, 112, 255, 0.3) 50%, rgba(123, 95, 255, 0.1) 100%)",
+                  boxShadow: "0 25px 80px -12px rgba(123, 95, 255, 0.4), 0 0 40px rgba(123, 95, 255, 0.15)"
                 }}
               >
-                <div 
-                  className="rounded-xl overflow-hidden"
+                <div
+                  className="rounded-2xl overflow-hidden"
                   style={{ backgroundColor: "#1A1F3A" }}
                 >
                   <Image
                     src="/images/hero.png"
                     alt="Project 1788322240795 Dashboard"
-                    width={700}
-                    height={500}
+                    width={800}
+                    height={560}
                     className="w-full h-auto"
+                    style={{ minHeight: "400px", objectFit: "cover" }}
                     priority
                   />
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <div 
-                className="absolute -bottom-4 -left-4 p-4 rounded-xl backdrop-blur-xl"
-                style={{ 
-                  backgroundColor: "rgba(26, 31, 58, 0.9)",
-                  border: "1px solid rgba(123, 95, 255, 0.3)"
+              {/* Floating elements - top right */}
+              <div
+                className="absolute -top-4 -right-4 p-4 rounded-xl backdrop-blur-xl"
+                style={{
+                  backgroundColor: "rgba(26, 31, 58, 0.95)",
+                  border: "1px solid rgba(123, 95, 255, 0.4)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)"
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(123, 95, 255, 0.2)" }}>
+                    <BarChart3 className="w-5 h-5" style={{ color: "#7B5FFF" }} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium" style={{ color: "#F5F7FF" }}>Productivity up</p>
+                    <p className="text-xs" style={{ color: "#7B5FFF" }}>+42% this week</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating elements - bottom left */}
+              <div
+                className="absolute -bottom-6 -left-6 p-4 rounded-xl backdrop-blur-xl"
+                style={{
+                  backgroundColor: "rgba(26, 31, 58, 0.95)",
+                  border: "1px solid rgba(123, 95, 255, 0.4)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)"
                 }}
               >
                 <div className="flex items-center gap-3">
@@ -415,17 +469,27 @@ export default function HomePage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-8 border-y" style={{ backgroundColor: "#1A1F3A", borderColor: "rgba(123, 95, 255, 0.2)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 border-y relative overflow-hidden" style={{ backgroundColor: "#1A1F3A", borderColor: "rgba(123, 95, 255, 0.2)" }}>
+        {/* Subtle nebula effects */}
+        <div
+          className="absolute left-0 top-0 w-64 h-32 blur-[60px]"
+          style={{ background: "radial-gradient(ellipse, rgba(123, 95, 255, 0.15) 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute right-0 bottom-0 w-64 h-32 blur-[60px]"
+          style={{ background: "radial-gradient(ellipse, rgba(123, 95, 255, 0.15) 0%, transparent 70%)" }}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-4">
+              <div key={index} className="flex items-center gap-4 group">
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center relative"
+                  className="w-14 h-14 rounded-full flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300"
                   style={{
-                    background: "linear-gradient(135deg, rgba(123, 95, 255, 0.3) 0%, rgba(123, 95, 255, 0.1) 100%)",
-                    border: "1px solid rgba(123, 95, 255, 0.3)",
-                    boxShadow: "0 0 20px rgba(123, 95, 255, 0.2)"
+                    background: "linear-gradient(135deg, rgba(123, 95, 255, 0.35) 0%, rgba(91, 63, 223, 0.15) 100%)",
+                    border: "1px solid rgba(123, 95, 255, 0.4)",
+                    boxShadow: "0 0 25px rgba(123, 95, 255, 0.25), inset 0 0 15px rgba(123, 95, 255, 0.1)"
                   }}
                 >
                   <stat.icon className="w-6 h-6" style={{ color: "#7B5FFF" }} />
@@ -443,61 +507,110 @@ export default function HomePage() {
       </section>
 
       {/* Features Bento Grid */}
-      <section id="features" className="py-24" style={{ backgroundColor: "#0A0E2F" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="features" className="py-24 relative overflow-hidden" style={{ backgroundColor: "#0A0E2F" }}>
+        {/* Atmospheric background effects */}
+        <div
+          className="absolute top-0 right-1/4 w-[500px] h-[500px] blur-[100px]"
+          style={{ background: "radial-gradient(circle, rgba(123, 95, 255, 0.12) 0%, transparent 60%)" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/4 w-[400px] h-[400px] blur-[80px]"
+          style={{ background: "radial-gradient(circle, rgba(91, 63, 223, 0.1) 0%, transparent 60%)" }}
+        />
+
+        {/* Stars in features section */}
+        <div className="absolute top-20 left-[10%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.5 }} />
+        <div className="absolute top-40 right-[15%] w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7B5FFF", opacity: 0.6 }} />
+        <div className="absolute bottom-32 left-[20%] w-1 h-1 rounded-full" style={{ backgroundColor: "#F5F7FF", opacity: 0.4 }} />
+        <div className="absolute bottom-48 right-[25%] w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: "#9370FF", opacity: 0.5, animationDelay: "0.5s" }} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Large AI Feature Card - Left side spanning 2 rows */}
             <Card
               className="lg:row-span-2 p-8 rounded-2xl border overflow-hidden relative"
               style={{
                 backgroundColor: "rgba(26, 31, 58, 0.6)",
-                borderColor: "rgba(123, 95, 255, 0.2)"
+                borderColor: "rgba(123, 95, 255, 0.3)"
               }}
             >
-              {/* Purple gradient orb */}
+              {/* Purple gradient background effect */}
               <div
-                className="absolute top-1/2 right-0 w-48 h-48 -translate-y-1/2 translate-x-1/4 rounded-full blur-3xl"
-                style={{ background: "radial-gradient(circle, rgba(123, 95, 255, 0.4) 0%, transparent 70%)" }}
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(160deg, rgba(123, 95, 255, 0.15) 0%, rgba(91, 63, 223, 0.05) 50%, transparent 70%)"
+                }}
               />
+
+              {/* Nebula glow orbs */}
+              <div
+                className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[60px]"
+                style={{ background: "radial-gradient(circle, rgba(123, 95, 255, 0.35) 0%, rgba(147, 112, 255, 0.15) 40%, transparent 70%)" }}
+              />
+              <div
+                className="absolute bottom-0 left-0 w-48 h-48 rounded-full blur-[50px]"
+                style={{ background: "radial-gradient(circle, rgba(91, 63, 223, 0.25) 0%, transparent 60%)" }}
+              />
+
+              <div className="relative z-10">
+                <Badge
+                  className="mb-4 px-3 py-1 rounded-full text-xs inline-flex items-center gap-1"
+                  style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", color: "#7B5FFF", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+                >
+                  <Sparkles className="w-3 h-3" />
+                  AI-Powered Planning
+                </Badge>
+
+                <h3
+                  className="text-2xl font-bold mb-4"
+                  style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
+                >
+                  Smart planning that adapts to your team
+                </h3>
+
+                <p className="mb-6" style={{ color: "#B8B8CC" }}>
+                  AI-powered insights help you estimate, prioritize, and plan projects with unmatched accuracy.
+                </p>
+
+                {/* Feature illustration with purple gradient effect */}
+                <div
+                  className="relative rounded-xl overflow-hidden mt-4"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(123, 95, 255, 0.2) 0%, rgba(91, 63, 223, 0.1) 100%)",
+                    border: "1px solid rgba(123, 95, 255, 0.2)"
+                  }}
+                >
+                  <Image
+                    src="/images/feature.png"
+                    alt="AI-Powered Planning Illustration"
+                    width={400}
+                    height={280}
+                    className="w-full h-auto"
+                    style={{ mixBlendMode: "lighten" }}
+                  />
+                  {/* Overlay gradient for purple tint */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(123, 95, 255, 0.1) 0%, transparent 50%, rgba(91, 63, 223, 0.15) 100%)"
+                    }}
+                  />
+                </div>
+              </div>
 
               {/* Floating tool icons */}
               <div
-                className="absolute top-16 right-8 w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+                className="absolute top-8 right-8 w-10 h-10 rounded-xl flex items-center justify-center z-20"
+                style={{ backgroundColor: "rgba(123, 95, 255, 0.25)", border: "1px solid rgba(123, 95, 255, 0.4)", boxShadow: "0 4px 20px rgba(123, 95, 255, 0.2)" }}
               >
                 <Sparkles className="w-5 h-5" style={{ color: "#7B5FFF" }} />
               </div>
               <div
-                className="absolute top-32 right-16 w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+                className="absolute top-24 right-20 w-10 h-10 rounded-xl flex items-center justify-center z-20"
+                style={{ backgroundColor: "rgba(123, 95, 255, 0.25)", border: "1px solid rgba(123, 95, 255, 0.4)", boxShadow: "0 4px 20px rgba(123, 95, 255, 0.2)" }}
               >
                 <BarChart3 className="w-5 h-5" style={{ color: "#7B5FFF" }} />
               </div>
-              <div
-                className="absolute bottom-32 right-8 w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
-              >
-                <Zap className="w-5 h-5" style={{ color: "#7B5FFF" }} />
-              </div>
-
-              <Badge
-                className="mb-4 px-3 py-1 rounded-full text-xs inline-flex items-center gap-1"
-                style={{ backgroundColor: "rgba(123, 95, 255, 0.15)", color: "#7B5FFF" }}
-              >
-                <Sparkles className="w-3 h-3" />
-                AI-Powered Planning
-              </Badge>
-
-              <h3
-                className="text-2xl font-bold mb-4 relative z-10"
-                style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
-              >
-                Smart planning that adapts to your team
-              </h3>
-
-              <p className="mb-8 relative z-10" style={{ color: "#B8B8CC" }}>
-                AI-powered insights help you estimate, prioritize, and plan projects with unmatched accuracy.
-              </p>
             </Card>
 
             {/* Top-right 2 cards */}
@@ -664,35 +777,53 @@ export default function HomePage() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="p-6 rounded-2xl border"
+                className="p-6 rounded-2xl border relative overflow-hidden group hover:border-purple-500/40 transition-all duration-300"
                 style={{
                   backgroundColor: "rgba(10, 14, 47, 0.6)",
                   borderColor: "rgba(123, 95, 255, 0.2)"
                 }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Image
-                    src={`/images/avatar-${index + 1}.svg`}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 rounded-full object-cover"
-                    style={{ border: "2px solid rgba(123, 95, 255, 0.3)" }}
-                  />
-                  <div>
-                    <p className="font-medium" style={{ color: "#F5F7FF" }}>{testimonial.name}</p>
-                    <p className="text-xs" style={{ color: "#B8B8CC" }}>{testimonial.role}</p>
+                {/* Subtle hover glow effect */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: "radial-gradient(circle at top right, rgba(123, 95, 255, 0.1) 0%, transparent 50%)" }}
+                />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-5">
+                    {/* Enhanced avatar with gradient border */}
+                    <div
+                      className="relative p-[2px] rounded-full"
+                      style={{
+                        background: "linear-gradient(135deg, #7B5FFF 0%, #9370FF 50%, #5B3FDF 100%)",
+                        boxShadow: "0 4px 15px rgba(123, 95, 255, 0.3)"
+                      }}
+                    >
+                      <div className="w-14 h-14 rounded-full overflow-hidden" style={{ backgroundColor: "#1A1F3A" }}>
+                        <Image
+                          src={`/images/avatar-${index + 1}.svg`}
+                          alt={testimonial.name}
+                          width={56}
+                          height={56}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-base" style={{ color: "#F5F7FF" }}>{testimonial.name}</p>
+                      <p className="text-xs" style={{ color: "#7B5FFF" }}>{testimonial.role}</p>
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-sm mb-4" style={{ color: "#B8B8CC" }}>
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
+                  <p className="text-sm mb-5 leading-relaxed" style={{ color: "#B8B8CC" }}>
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
 
-                <div className="flex items-center gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
+                  <div className="flex items-center gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                 </div>
               </Card>
             ))}
