@@ -420,9 +420,13 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="flex items-center gap-4">
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(123, 95, 255, 0.15)" }}
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center relative"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(123, 95, 255, 0.3) 0%, rgba(123, 95, 255, 0.1) 100%)",
+                    border: "1px solid rgba(123, 95, 255, 0.3)",
+                    boxShadow: "0 0 20px rgba(123, 95, 255, 0.2)"
+                  }}
                 >
                   <stat.icon className="w-6 h-6" style={{ color: "#7B5FFF" }} />
                 </div>
@@ -441,100 +445,172 @@ export default function HomePage() {
       {/* Features Bento Grid */}
       <section id="features" className="py-24" style={{ backgroundColor: "#0A0E2F" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Large Feature Card */}
-            <Card 
-              className="md:col-span-2 lg:col-span-1 lg:row-span-2 p-8 rounded-2xl border overflow-hidden relative"
-              style={{ 
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Large AI Feature Card - Left side spanning 2 rows */}
+            <Card
+              className="lg:row-span-2 p-8 rounded-2xl border overflow-hidden relative"
+              style={{
                 backgroundColor: "rgba(26, 31, 58, 0.6)",
                 borderColor: "rgba(123, 95, 255, 0.2)"
               }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-20" style={{ background: "radial-gradient(circle, #7B5FFF 0%, transparent 70%)" }} />
-              
-              <Badge 
-                className="mb-4 px-3 py-1 rounded-full text-xs"
+              {/* Purple gradient orb */}
+              <div
+                className="absolute top-1/2 right-0 w-48 h-48 -translate-y-1/2 translate-x-1/4 rounded-full blur-3xl"
+                style={{ background: "radial-gradient(circle, rgba(123, 95, 255, 0.4) 0%, transparent 70%)" }}
+              />
+
+              {/* Floating tool icons */}
+              <div
+                className="absolute top-16 right-8 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+              >
+                <Sparkles className="w-5 h-5" style={{ color: "#7B5FFF" }} />
+              </div>
+              <div
+                className="absolute top-32 right-16 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+              >
+                <BarChart3 className="w-5 h-5" style={{ color: "#7B5FFF" }} />
+              </div>
+              <div
+                className="absolute bottom-32 right-8 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "rgba(123, 95, 255, 0.2)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+              >
+                <Zap className="w-5 h-5" style={{ color: "#7B5FFF" }} />
+              </div>
+
+              <Badge
+                className="mb-4 px-3 py-1 rounded-full text-xs inline-flex items-center gap-1"
                 style={{ backgroundColor: "rgba(123, 95, 255, 0.15)", color: "#7B5FFF" }}
               >
-                <Sparkles className="w-3 h-3 mr-1" />
+                <Sparkles className="w-3 h-3" />
                 AI-Powered Planning
               </Badge>
-              
-              <h3 
-                className="text-2xl font-bold mb-4"
+
+              <h3
+                className="text-2xl font-bold mb-4 relative z-10"
                 style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
               >
                 Smart planning that adapts to your team
               </h3>
-              
-              <p className="mb-8" style={{ color: "#B8B8CC" }}>
+
+              <p className="mb-8 relative z-10" style={{ color: "#B8B8CC" }}>
                 AI-powered insights help you estimate, prioritize, and plan projects with unmatched accuracy.
               </p>
-
-              <div className="relative mt-auto">
-                <div 
-                  className="rounded-xl p-4 space-y-3"
-                  style={{ backgroundColor: "rgba(10, 14, 47, 0.6)" }}
-                >
-                  {[
-                    { icon: Sparkles, text: "Smart suggestions" },
-                    { icon: Zap, text: "Auto prioritization" },
-                    { icon: Clock, text: "Time estimates" }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div 
-                        className="w-8 h-8 rounded-lg flex items-center justify-center"
-                        style={{ backgroundColor: "rgba(123, 95, 255, 0.2)" }}
-                      >
-                        <item.icon className="w-4 h-4" style={{ color: "#7B5FFF" }} />
-                      </div>
-                      <span className="text-sm" style={{ color: "#F5F7FF" }}>{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </Card>
 
-            {/* Regular Feature Cards */}
-            {features.slice(1).map((feature, index) => (
-              <Card 
+            {/* Top-right 2 cards */}
+            {features.slice(1, 3).map((feature, index) => (
+              <Card
                 key={index}
-                className="p-6 rounded-2xl border group hover:border-purple-500/40 transition-all duration-300"
-                style={{ 
+                className="p-6 rounded-2xl border group hover:border-purple-500/40 transition-all duration-300 relative overflow-hidden"
+                style={{
                   backgroundColor: "rgba(26, 31, 58, 0.6)",
                   borderColor: "rgba(123, 95, 255, 0.2)"
                 }}
               >
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
-                  style={{ backgroundColor: "rgba(123, 95, 255, 0.15)" }}
-                >
-                  <feature.icon className="w-6 h-6" style={{ color: "#7B5FFF" }} />
-                </div>
-                
-                <h3 
-                  className="text-lg font-semibold mb-2"
-                  style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
-                >
-                  {feature.title}
-                </h3>
-                
-                <p className="text-sm" style={{ color: "#B8B8CC" }}>
-                  {feature.description}
-                </p>
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: "rgba(123, 95, 255, 0.15)" }}
+                    >
+                      <feature.icon className="w-6 h-6" style={{ color: "#7B5FFF" }} />
+                    </div>
 
-                <div className="mt-4 flex items-center gap-2">
-                  <div 
-                    className="w-20 h-16 rounded-lg overflow-hidden"
-                    style={{ backgroundColor: "rgba(10, 14, 47, 0.6)" }}
-                  >
-                    <Image
-                      src="/images/feature.png"
-                      alt={feature.title}
-                      width={80}
-                      height={64}
-                      className="w-full h-full object-cover opacity-70"
-                    />
+                    <h3
+                      className="text-lg font-semibold mb-2"
+                      style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
+                    >
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-sm" style={{ color: "#B8B8CC" }}>
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Mini preview graphic */}
+                  <div className="ml-4 relative">
+                    <div
+                      className="w-24 h-20 rounded-lg overflow-hidden"
+                      style={{ backgroundColor: "rgba(10, 14, 47, 0.8)" }}
+                    >
+                      <div className="w-full h-full flex items-center justify-center">
+                        {index === 0 ? (
+                          <div className="space-y-1 p-2">
+                            <div className="w-12 h-1.5 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.4)" }} />
+                            <div className="w-8 h-1.5 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.3)" }} />
+                            <div className="w-10 h-1.5 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.2)" }} />
+                          </div>
+                        ) : (
+                          <div className="flex items-end gap-1 p-2">
+                            <div className="w-2 h-6 rounded-t" style={{ backgroundColor: "rgba(123, 95, 255, 0.5)" }} />
+                            <div className="w-2 h-8 rounded-t" style={{ backgroundColor: "rgba(123, 95, 255, 0.6)" }} />
+                            <div className="w-2 h-4 rounded-t" style={{ backgroundColor: "rgba(123, 95, 255, 0.4)" }} />
+                            <div className="w-2 h-10 rounded-t" style={{ backgroundColor: "rgba(123, 95, 255, 0.7)" }} />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+
+            {/* Bottom-right 2 cards */}
+            {features.slice(3).map((feature, index) => (
+              <Card
+                key={index}
+                className="p-6 rounded-2xl border group hover:border-purple-500/40 transition-all duration-300 relative overflow-hidden"
+                style={{
+                  backgroundColor: "rgba(26, 31, 58, 0.6)",
+                  borderColor: "rgba(123, 95, 255, 0.2)"
+                }}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: "rgba(123, 95, 255, 0.15)" }}
+                    >
+                      <feature.icon className="w-6 h-6" style={{ color: "#7B5FFF" }} />
+                    </div>
+
+                    <h3
+                      className="text-lg font-semibold mb-2"
+                      style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
+                    >
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-sm" style={{ color: "#B8B8CC" }}>
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Mini preview graphic */}
+                  <div className="ml-4 relative">
+                    <div
+                      className="w-24 h-20 rounded-lg overflow-hidden"
+                      style={{ backgroundColor: "rgba(10, 14, 47, 0.8)" }}
+                    >
+                      <div className="w-full h-full flex items-center justify-center">
+                        {index === 0 ? (
+                          <div className="grid grid-cols-2 gap-1 p-2">
+                            <div className="w-4 h-4 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.3)" }} />
+                            <div className="w-4 h-4 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.5)" }} />
+                            <div className="w-4 h-4 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.4)" }} />
+                            <div className="w-4 h-4 rounded" style={{ backgroundColor: "rgba(123, 95, 255, 0.6)" }} />
+                          </div>
+                        ) : (
+                          <div className="p-2">
+                            <Shield className="w-8 h-8" style={{ color: "rgba(123, 95, 255, 0.5)" }} />
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -551,53 +627,68 @@ export default function HomePage() {
               <p className="text-sm font-medium uppercase tracking-wider mb-2" style={{ color: "#7B5FFF" }}>
                 Trusted by teams worldwide
               </p>
-              <h2 
+              <h2
                 className="text-3xl md:text-4xl font-bold"
                 style={{ color: "#F5F7FF", fontFamily: "Space Grotesk, sans-serif" }}
               >
                 Loved by teams, proven by results
               </h2>
             </div>
-            <Link 
-              href="#testimonials" 
-              className="hidden md:flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
-              style={{ color: "#7B5FFF" }}
-            >
-              View all testimonials
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="hidden md:flex items-center gap-4">
+              <Link
+                href="#testimonials"
+                className="flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
+                style={{ color: "#7B5FFF" }}
+              >
+                View all testimonials
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <div className="flex items-center gap-2">
+                <button
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                  style={{ backgroundColor: "rgba(123, 95, 255, 0.1)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+                >
+                  <ArrowRight className="w-4 h-4 rotate-180" style={{ color: "#7B5FFF" }} />
+                </button>
+                <button
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                  style={{ backgroundColor: "rgba(123, 95, 255, 0.1)", border: "1px solid rgba(123, 95, 255, 0.3)" }}
+                >
+                  <ArrowRight className="w-4 h-4" style={{ color: "#7B5FFF" }} />
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 rounded-2xl border"
-                style={{ 
+                style={{
                   backgroundColor: "rgba(10, 14, 47, 0.6)",
                   borderColor: "rgba(123, 95, 255, 0.2)"
                 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div 
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium"
-                    style={{ 
-                      backgroundColor: `hsl(${260 + index * 15}, 50%, 35%)`,
-                      color: "#F5F7FF"
-                    }}
-                  >
-                    {testimonial.name.split(" ").map(n => n[0]).join("")}
-                  </div>
+                  <Image
+                    src={`/images/avatar-${index + 1}.svg`}
+                    alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                    style={{ border: "2px solid rgba(123, 95, 255, 0.3)" }}
+                  />
                   <div>
                     <p className="font-medium" style={{ color: "#F5F7FF" }}>{testimonial.name}</p>
                     <p className="text-xs" style={{ color: "#B8B8CC" }}>{testimonial.role}</p>
                   </div>
                 </div>
-                
+
                 <p className="text-sm mb-4" style={{ color: "#B8B8CC" }}>
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                
+
                 <div className="flex items-center gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
